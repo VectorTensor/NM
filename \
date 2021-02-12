@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+
+	int r;
+	printf("Enter the row and column of the matrix\n");
+	scanf("%d",&r);
+	float A[20][20];
+	printf("Enter data \n");
+	for (int i =0;i<r;i++){
+		for (int j=0;j<r;j++){
+			scanf("%f",&A[i][j]);
+		}
+	}
+	printf("Enter data base \n");
+	for(int i=0;i<r;i++){
+		scanf("%f",&A[i][r]);
+
+	}
+	printf("Initial matraix \n");
+	for (int i =0;i<r;i++){
+		for (int j=0;j<r+1;j++){
+			printf("%f",A[i][j]);
+		}
+	}
+	float x=0;
+	for (int i =0;i<r;i++){
+		x=A[i][i];
+		for (int j=0;j<=r;j++){
+			for(int k=i+1;k<r;k++){
+				A[k][j]=A[k][j]-(A[i][j]*A[k][j])/x;
+				
+			}
+		}
+	}
+	printf("After calc\n");
+	for (int i =0;i<r;i++){
+		for (int j=0;j<r+1;j++){
+			printf("%f",A[i][j]);
+		}
+	}
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
