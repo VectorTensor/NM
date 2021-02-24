@@ -42,7 +42,7 @@ int main(){
 	lmd_new=fabs(largest);
 //	printf("%f\n",largest);
 	for(int i=0;i<n;i++){
-		x[i]=Y[i]/lmd_new;
+		x[i]=Y[i]/largest;
 	}
 
 	float m=0;
